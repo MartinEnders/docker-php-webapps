@@ -43,4 +43,7 @@ RUN pecl install imagick; \
     apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
     rm -rf /var/lib/apt/lists/*;
 
+
+COPY config-files/file-upload-limits.ini /usr/local/etc/php/conf.d/
+
 RUN a2enmod rewrite
